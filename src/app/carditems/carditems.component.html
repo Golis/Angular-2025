@@ -1,10 +1,15 @@
-<div class="card">
-    <img src="assets/img_avatar_chico.png" alt="Avatar" style="width: 80%;">
-    <div class="container">
-        <h4>Diego Antón</h4>
-        <p>Programador</p>
+<ng-container *ngIf="employee.isactive">
+    <div  class="card">
+        <img src="{{employee.iconUrl}}" alt="Avatar" style="width: 80%;">
+        <div class="container">
+            <h4 [ngStyle]="oncheckRank(employee.rank)">{{employee.name}}</h4>
+            <p>{{employee.role}}</p>
+        </div>
+        <div [ngSwitch]="employee.rank">
+            <span class="junior" *ngSwitchCase="'junior'">Necesita soporte</span>
+            <span class="senior" *ngSwitchCase="'senior'">Lidera un equipo</span>
+            <!--<span [ngClass]="employee.rank">{{employee.rank}}</span>-->
+        </div>
+        <button (click)="onEmployeeChecked()">Check Employee</button>
     </div>
-    <div>
-        <span>Senior</span>
-    </div>
-</div>
+</ng-container>

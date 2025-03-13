@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Employee } from '../../models/employee';
 
 @Component({
   selector: 'app-carditems',
@@ -7,5 +8,19 @@ import { Component } from '@angular/core';
   styleUrl: './carditems.component.css'
 })
 export class CarditemsComponent {
+  @Input() employee: any;
+  @Output()
+  employeeSelected = new EventEmitter<Employee>();
+  
+  onEmployeeChecked(){
+    this.employeeSelected.emit(this.employee);
+  }
 
+  oncheckRank(rank: string){
+    if(rank ==='senior'){
+      return { 'text-decoration': 'underline' }
+    } else{
+      return null;
+    }
+  }
 }
