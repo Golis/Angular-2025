@@ -7,8 +7,15 @@
     <!--@for(employee of employees; track employee.id){
         <app-carditems (employeeSelected)="onEmployeeSelected($event)" [employee]="employee"></app-carditems>
 }-->
-    <div *ngFor="let employee of employees; let i = index"><app-carditems (employeeSelected)="onEmployeeSelected($event)" [employee]="employee"></app-carditems></div>
+    <div *ngFor="let employee of employees; let i = index">
+        <app-carditems #component (employeeSelected)="onEmployeeSelected($event)" [employee]="employee">
+            <h4 #employeeContent1 class="content1">Content projection 1</h4>
+            <h4 #employeeContent2 class="content2">Content projection 2</h4>
+            <h4>Content projection 3</h4>
+        </app-carditems>
+    </div>
     
 </div>
 
 <h4>Empleado seleccionado: {{selectedEmployee.name}}</h4>
+<h4 #todayRef>Hoy: {{today | date: 'dd/MM/yyyy'}}</h4>

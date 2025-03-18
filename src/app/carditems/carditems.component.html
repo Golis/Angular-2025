@@ -8,8 +8,11 @@
         <div [ngSwitch]="employee.rank">
             <span class="junior" *ngSwitchCase="'junior'">Necesita soporte</span>
             <span class="senior" *ngSwitchCase="'senior'">Lidera un equipo</span>
+            <ng-content select=".content2"></ng-content>
             <!--<span [ngClass]="employee.rank">{{employee.rank}}</span>-->
         </div>
         <button (click)="onEmployeeChecked()">Check Employee</button>
     </div>
+    <ng-content select=".content1"></ng-content>
+    <ng-content></ng-content>
 </ng-container>
