@@ -11,6 +11,8 @@ import { HeaderComponent } from './header/header.component';
 import { ListitemsComponent } from './listitems/listitems.component';
 import { CarditemsComponent } from './carditems/carditems.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
+import { DeeperDirectivesComponent } from './deeper-directives/deeper-directives.component';
+import { HighlightedDirective } from './directives/highlighted.directive';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
     HeaderComponent,
     ListitemsComponent,
     CarditemsComponent,
-    LandingpageComponent
+    LandingpageComponent,
+    DeeperDirectivesComponent,
+    HighlightedDirective
   ],
   imports: [
     BrowserModule,
