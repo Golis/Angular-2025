@@ -1,13 +1,15 @@
-<div appHighlighted>
+<div>
     <form>
-        <input type="text" value="" required>
+        <input [appHighlighted]="true" type="text" value="" required>
         <input type="submit" disabled value="Enviar">
     </form>
 </div>
 
-<div appHighlighted>
+<div>
     <form>
-        <input type="text" value="" required>
+        <input [appHighlighted]="false" type="text" value="" required>
         <input type="submit" disabled value="Enviar">
     </form>
 </div>
+
+<input type="text" [appLimitChars]="10" placeholder="Máximo 10 caracteres" />

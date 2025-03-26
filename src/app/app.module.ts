@@ -13,6 +13,7 @@ import { CarditemsComponent } from './carditems/carditems.component';
 import { LandingpageComponent } from './landingpage/landingpage.component';
 import { DeeperDirectivesComponent } from './deeper-directives/deeper-directives.component';
 import { HighlightedDirective } from './directives/highlighted.directive';
+import { LimitCharsDirective } from './directives/limit-chars.directive';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { HighlightedDirective } from './directives/highlighted.directive';
     CarditemsComponent,
     LandingpageComponent,
     DeeperDirectivesComponent,
-    HighlightedDirective
+    HighlightedDirective,
+    LimitCharsDirective
   ],
   imports: [
     BrowserModule,
