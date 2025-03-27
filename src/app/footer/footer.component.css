@@ -1,3 +1,12 @@
+:host(.blue-theme) .welcome{
+  color: blue;
+}
+
+:host(.red-theme) .welcome{
+  color: red;
+}
+
+
 .social-links {
     display: flex;
     align-items: center;
@@ -13,3 +22,4 @@
   .social-links a:hover svg path {
     fill: var(--gray-900);
   }
+

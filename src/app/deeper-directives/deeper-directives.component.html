@@ -1,15 +1,17 @@
+
 <div>
     <form>
         <input [appHighlighted]="true" type="text" value="" required>
         <input type="submit" disabled value="Enviar">
     </form>
 </div>
-
+<p *appNgxUnless="true">Probando una directiva estructural personalizada</p>
 <div>
     <form>
         <input [appHighlighted]="false" type="text" value="" required>
         <input type="submit" disabled value="Enviar">
     </form>
 </div>
+
 
 <input type="text" [appLimitChars]="10" placeholder="Máximo 10 caracteres" />

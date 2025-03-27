@@ -7,7 +7,7 @@
     <!--@for(employee of employees; track employee.id){
         <app-carditems (employeeSelected)="onEmployeeSelected($event)" [employee]="employee"></app-carditems>
 }-->
-    <div *ngFor="let employee of employees; let i = index">
+    <div *ngFor="let employee of (employees$ | async); let i = index">
         <app-carditems #component (employeeSelected)="onEmployeeSelected($event)" [employee]="employee">
             <h4 #employeeContent1 class="content1">Content projection 1</h4>
             <h4 #employeeContent2 class="content2">Content projection 2</h4>

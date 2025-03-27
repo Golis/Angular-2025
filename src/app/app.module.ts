@@ -14,6 +14,8 @@ import { LandingpageComponent } from './landingpage/landingpage.component';
 import { DeeperDirectivesComponent } from './deeper-directives/deeper-directives.component';
 import { HighlightedDirective } from './directives/highlighted.directive';
 import { LimitCharsDirective } from './directives/limit-chars.directive';
+import { NgxUnlessDirective } from './directives/ngx-unless.directive';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,14 +30,16 @@ import { LimitCharsDirective } from './directives/limit-chars.directive';
     LandingpageComponent,
     DeeperDirectivesComponent,
     HighlightedDirective,
-    LimitCharsDirective
+    LimitCharsDirective,
+    NgxUnlessDirective
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

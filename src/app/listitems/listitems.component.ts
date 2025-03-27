@@ -1,14 +1,16 @@
 import { Component, ElementRef, QueryList, viewChild, ViewChild, ViewChildren } from '@angular/core';
-import { employees } from '../../../public/assets/fixtures/employees';
+//import { employees } from '../../../public/assets/fixtures/employees';
 import { Employee } from '../../models/employee';
 import { DatePipe } from '@angular/common';
 import { CarditemsComponent } from '../carditems/carditems.component';
+import { MockserviceService } from '../services/mockservice.service';
+import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-listitems',
   standalone: false,
   templateUrl: './listitems.component.html',
-  styleUrl: './listitems.component.css'
+  styleUrl: './listitems.component.css',
 })
 export class ListitemsComponent{
   @ViewChild ('todayRef') todayRef?: ElementRef
@@ -22,14 +24,15 @@ export class ListitemsComponent{
 
   selectedEmployee: Employee;
 
-  employees: any = employees;
-
+  //employees: any = employees;
+  //employees: any;
+  employees$?: Observable<Employee[]>;
   today = new Date();
   tomorrow?:any;
   datepipe: DatePipe = new DatePipe('en-US')
-
+  subscription?: Subscription;
   // El constructor se instancia ANTES de renderizar el html
-  constructor(){
+  constructor(private mockService: MockserviceService){
     this.selectedEmployee = new Employee();
     console.log('constructor');
     console.log(this.todayRef?.nativeElement.innerText);
@@ -37,7 +40,13 @@ export class ListitemsComponent{
 
   // Buen lugar para conectar con el backend. Primer método de Angular en ser instanciado en el ciclo de vida
   ngOnInit(){
-
+    console.log('ngOnInit');
+    this.employees$ = this.mockService.getEmployeesFromServer();
+    /*this.subscription = this.mockService.getEmployeesFromServer().subscribe(
+      data=>{
+        this.employees = data;
+      }
+    );*/
   }
 
   // Buen lugar para acceder al DOM / html y hacer lo que necesitemos
@@ -53,5 +62,12 @@ export class ListitemsComponent{
 
   onEmployeeSelected(employee: Employee){
     this.selectedEmployee = employee;
+  }
+
+  ngOnDestroy(){
+    console.log('ngOnDestroy');
+    /*if(this.subscription){
+      this.subscription.unsubscribe();
+    }*/
   }
 }
