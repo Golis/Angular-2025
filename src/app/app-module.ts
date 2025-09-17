@@ -10,6 +10,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { Landingpage } from './landingpage/landingpage';
 import { ListItems } from './list-items/list-items';
+import { CardItem } from './card-item/card-item';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ListItems } from './list-items/list-items';
     FooterComponent,
     HeaderComponent,
     Landingpage,
-    ListItems
+    ListItems,
+    CardItem
   ],
   imports: [
     BrowserModule,
