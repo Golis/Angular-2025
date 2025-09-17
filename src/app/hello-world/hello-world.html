@@ -1,0 +1,11 @@
+<!-- Interpolación-->
+<p>hello, {{name}}</p>
+
+<!--Property binding-->
+<img [src]="imageUrl" />    
+
+<!--Event binding-->
+<button (click)="onButtonClick()">Cambiar nombre</button>
+
+<!--Two way binding-->
+<input [(ngModel)]="name" type="text"/>
