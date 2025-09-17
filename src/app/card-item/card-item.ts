@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-card-item',
@@ -7,5 +7,10 @@ import { Component } from '@angular/core';
   styleUrl: './card-item.css'
 })
 export class CardItem {
+  @Input() employee: any;
+  @Output() employeeSelected = new EventEmitter<void>();
 
+  onEmployeeSelected(){
+    this.employeeSelected.emit(this.employee);
+  }
 }
