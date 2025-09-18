@@ -7,10 +7,18 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrl: './card-item.css'
 })
 export class CardItem {
-  @Input() employee: any;
+  @Input() childEmployee: any;
   @Output() employeeSelected = new EventEmitter<void>();
 
   onEmployeeSelected(){
-    this.employeeSelected.emit(this.employee);
+    this.employeeSelected.emit(this.childEmployee);
+  }
+
+  onCheckRank(rank: string){
+      if(rank === 'junior'){
+        return { 'text-decoration': 'underline', 'color': 'blue' };
+      } else{
+        return null;
+      }
   }
 }

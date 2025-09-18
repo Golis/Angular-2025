@@ -7,7 +7,7 @@ export const employees = [
         sex: "masculino",
         role: "Desarrollador AI",
         isactive: true,
-        rank: "Senior"
+        rank: "senior"
     },
     {
         id: 2,
@@ -17,7 +17,7 @@ export const employees = [
         sex: "masculino",
         role: "Desarrollador web",
         isactive: true,
-        rank: "Junior"
+        rank: "junior"
     },
     {
         id: 3,
@@ -27,7 +27,7 @@ export const employees = [
         sex: "masculino",
         role: "Desarrollador de Python",
         isactive: true,
-        rank: "Junior"
+        rank: "junior"
     },
     {
         id: 2,
@@ -37,6 +37,6 @@ export const employees = [
         sex: "femenino",
         role: "Desarrolladora web",
         isactive: true,
-        rank: "Senior"
+        rank: "senior"
     }
 ];

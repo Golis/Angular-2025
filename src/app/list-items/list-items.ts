@@ -9,10 +9,11 @@ import { employees } from '../../../public/assets/fixture/employees';
 })
 export class ListItems {
   selectedEmployee: any;
-  firstEmployee = employees[0];
+  employees = employees;
+  /*firstEmployee = employees[0];
   secondEmployee = employees[1];
   thirdEmployee = employees[2];
-  fourthEmployee = employees[3];
+  fourthEmployee = employees[3];*/
 
   onEmployeeSelected(employee: any){
     this.selectedEmployee = employee;

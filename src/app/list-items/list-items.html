@@ -1,8 +1,16 @@
 <h1>Lista de empleados</h1>
+
+<!-- Alternativa Angular 17 -->
+<!--@for(employee of employees; track employee.id;) {
+  <app-card-item (employeeSelected)="onEmployeeSelected($event)" [childEmployee]="employee"></app-card-item>
+}-->
+
 <div>
-    <app-card-item (employeeSelected)="onEmployeeSelected($event)" [employee]="firstEmployee"></app-card-item>
-    <app-card-item (employeeSelected)="onEmployeeSelected($event)" [employee]="secondEmployee"></app-card-item>
+    <ng-container *ngFor="let employee of employees">
+        <app-card-item (employeeSelected)="onEmployeeSelected($event)" [childEmployee]="employee"></app-card-item>
+    </ng-container>
+    <!--<app-card-item (employeeSelected)="onEmployeeSelected($event)" [employee]="secondEmployee"></app-card-item>
     <app-card-item (employeeSelected)="onEmployeeSelected($event)" [employee]="thirdEmployee"></app-card-item>
-    <app-card-item (employeeSelected)="onEmployeeSelected($event)" [employee]="fourthEmployee"></app-card-item>
+    <app-card-item (employeeSelected)="onEmployeeSelected($event)" [employee]="fourthEmployee"></app-card-item>-->
 </div>
-<h4>Empleado seleccionado: <span>{{selectedEmployee.name}}</span></h4>
+<h4>Empleado seleccionado: <span *ngIf="selectedEmployee">{{selectedEmployee.name}}</span></h4>
