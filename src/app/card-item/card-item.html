@@ -1,9 +1,11 @@
+<ng-content select=".content1"></ng-content>
 <div *ngIf="childEmployee" class="card">
     <img src="{{childEmployee.iconUrl}}" alt="Avatar" style="width: 80%;">
     <div class="container">
         <h4 [ngStyle]="onCheckRank(childEmployee.rank)">{{childEmployee.name}}</h4>
         <p>{{childEmployee.role}}</p>
     </div>
+    <ng-content select=".content3"></ng-content>
     <div [ngSwitch]="childEmployee.rank">
         <span class="junior" *ngSwitchCase="'junior'">Necesita soporte</span>
         <span class="senior" *ngSwitchCase="'senior'">Lidera un equipo</span>
@@ -11,3 +13,4 @@
     </div>
     <button (click)="onEmployeeSelected()">Select Employee</button>
 </div>
+<ng-content select=".content2"></ng-content>

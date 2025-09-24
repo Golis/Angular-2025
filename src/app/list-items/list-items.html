@@ -7,10 +7,15 @@
 
 <div>
     <ng-container *ngFor="let employee of employees">
-        <app-card-item (employeeSelected)="onEmployeeSelected($event)" [childEmployee]="employee"></app-card-item>
+        <app-card-item #component (employeeSelected)="onEmployeeSelected($event)" [childEmployee]="employee">
+          <h4 #employeeContent1 class="content1">Content projection 1</h4>
+          <h4 class="content2">Content projection 2</h4>
+          <h4 class="content3">Content projection 3</h4>
+        </app-card-item>
     </ng-container>
     <!--<app-card-item (employeeSelected)="onEmployeeSelected($event)" [employee]="secondEmployee"></app-card-item>
     <app-card-item (employeeSelected)="onEmployeeSelected($event)" [employee]="thirdEmployee"></app-card-item>
     <app-card-item (employeeSelected)="onEmployeeSelected($event)" [employee]="fourthEmployee"></app-card-item>-->
 </div>
 <h4>Empleado seleccionado: <span *ngIf="selectedEmployee">{{selectedEmployee.name}}</span></h4>
+<h4 #todayRef >Hoy: {{today | date: 'dd/MM/yyyy'}}</h4>
