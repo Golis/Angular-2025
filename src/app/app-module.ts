@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { Landingpage } from './landingpage/landingpage';
 import { ListItems } from './list-items/list-items';
 import { CardItem } from './card-item/card-item';
+import { FilterByCategoryPipe } from './pipes/filter-by-category.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CardItem } from './card-item/card-item';
     HeaderComponent,
     Landingpage,
     ListItems,
-    CardItem
+    CardItem,
+    FilterByCategoryPipe
   ],
   imports: [
     BrowserModule,

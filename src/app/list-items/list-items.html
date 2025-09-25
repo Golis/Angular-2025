@@ -6,7 +6,7 @@
 }-->
 
 <div>
-    <ng-container *ngFor="let employee of employees">
+    <ng-container *ngFor="let employee of employees | FilterByCategoryPipe: 'senior'">
         <app-card-item #component (employeeSelected)="onEmployeeSelected($event)" [childEmployee]="employee">
           <h4 #employeeContent1 class="content1">Content projection 1</h4>
           <h4 class="content2">Content projection 2</h4>
