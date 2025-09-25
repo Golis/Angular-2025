@@ -12,6 +12,8 @@ import { Landingpage } from './landingpage/landingpage';
 import { ListItems } from './list-items/list-items';
 import { CardItem } from './card-item/card-item';
 import { FilterByCategoryPipe } from './pipes/filter-by-category.pipe';
+import { Highlighted } from './directives/highlighted';
+import { TestingDirectives } from './testing-directives/testing-directives';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { FilterByCategoryPipe } from './pipes/filter-by-category.pipe';
     Landingpage,
     ListItems,
     CardItem,
-    FilterByCategoryPipe
+    FilterByCategoryPipe,
+    Highlighted,
+    TestingDirectives
   ],
   imports: [
     BrowserModule,

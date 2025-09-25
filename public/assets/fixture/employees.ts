@@ -13,7 +13,7 @@ export const employees = [
         id: 2,
         name: "Alejandro",
         description: "Programa React",
-        iconUrl: "assets/img_avatar_chico.png",
+        //iconUrl: "assets/img_not_available.jpg",
         sex: "masculino",
         role: "Desarrollador web",
         isactive: true,

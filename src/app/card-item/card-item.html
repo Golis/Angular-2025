@@ -1,6 +1,14 @@
+<ng-template #noImageAvailable let-name="name">
+    <p>No hay imagen disponible para {{name}}</p>
+    <img src="assets/img_not_available.jpg" alt="Avatar no disponible" style="width: 80%;">
+</ng-template>
+
+
 <ng-content select=".content1"></ng-content>
-<div *ngIf="childEmployee" class="card">
-    <img src="{{childEmployee.iconUrl}}" alt="Avatar" style="width: 80%;">
+<div *ngIf="childEmployee"  class="card">
+    <!--<img *ngIf="childEmployee.iconUrl; else noImageAvailable" src="{{childEmployee.iconUrl}}" alt="Avatar" style="width: 80%;">-->
+    <ng-container *ngIf="!childEmployee.iconUrl"><ng-container *ngTemplateOutlet="noImageAvailable; context: {name: childEmployee.name}"></ng-container></ng-container>
+    <img *ngIf="childEmployee.iconUrl" src="{{childEmployee.iconUrl}}" alt="Avatar" style="width: 80%;">
     <div class="container">
         <h4 [ngStyle]="onCheckRank(childEmployee.rank)">{{childEmployee.name}}</h4>
         <p>{{childEmployee.role}}</p>
