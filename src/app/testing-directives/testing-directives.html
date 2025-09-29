@@ -1,6 +1,13 @@
-<div>
+<div *ngIf="false">
     <form>
         <input type="text" value="" required [appHighlighted]="true" />
         <input type="submit" disabled value="Enviar" />
     </form>
 </div>
+<p *appNgxUnless="false">Probando una directiva estructural personalizada</p>
+<ng-template [ngIf]="false">
+    <form>
+        <input type="text" value="" required [appHighlighted]="true" />
+        <input type="submit" disabled value="Enviar" />
+    </form>
+</ng-template>

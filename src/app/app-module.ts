@@ -14,6 +14,7 @@ import { CardItem } from './card-item/card-item';
 import { FilterByCategoryPipe } from './pipes/filter-by-category.pipe';
 import { Highlighted } from './directives/highlighted';
 import { TestingDirectives } from './testing-directives/testing-directives';
+import { NgxUnless } from './directives/ngx-unless';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { TestingDirectives } from './testing-directives/testing-directives';
     CardItem,
     FilterByCategoryPipe,
     Highlighted,
-    TestingDirectives
+    TestingDirectives,
+    NgxUnless
   ],
   imports: [
     BrowserModule,
