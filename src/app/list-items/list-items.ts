@@ -1,7 +1,10 @@
 import { Component, ElementRef, QueryList, ViewChild, ViewChildren } from '@angular/core';
-import { employees } from '../../../public/assets/fixture/employees';
+//import { employees } from '../../../public/assets/fixture/employees';
 import { DatePipe } from '@angular/common';
 import { CardItem } from '../card-item/card-item';
+import { Observable, Subscription } from 'rxjs';
+import { Mockservice } from '../services/mockservice';
+import { Employee } from '../../models/employee';
 
 @Component({
   selector: 'app-list-items',
@@ -15,7 +18,9 @@ export class ListItems {
 
 
   selectedEmployee: any;
-  employees = employees;
+  //employees: any;
+  employees$?: Observable<Employee[]>;
+  subscription?: Subscription
   /*firstEmployee = employees[0];
   secondEmployee = employees[1];
   thirdEmployee = employees[2];
@@ -25,9 +30,19 @@ export class ListItems {
   tomorrow?: Date;
   datepipe: DatePipe = new DatePipe('en-US');
 
-  constructor() {
+  constructor(private mockService: Mockservice) {
     console.log('ListItems constructor');
     console.log(this.todayRef?.nativeElement.innerText);
+  }
+
+  ngOnInit() {
+    console.log('ngOnInit');
+    /*this.subscription = this.mockService.getEmployeesFromServer().subscribe(
+      data => {
+        this.employees = data;
+      }
+    )*/
+    this.employees$ = this.mockService.getEmployeesFromServer();
   }
 
   // Pendiente de explicar
@@ -41,4 +56,9 @@ export class ListItems {
   onEmployeeSelected(employee: any){
     this.selectedEmployee = employee;
   }
+
+  ngOnDestroy() {
+    console.log('ListItems ngOnDestroy');
+    //this.subscription?.unsubscribe();
+  } 
 }

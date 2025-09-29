@@ -15,6 +15,7 @@ import { FilterByCategoryPipe } from './pipes/filter-by-category.pipe';
 import { Highlighted } from './directives/highlighted';
 import { TestingDirectives } from './testing-directives/testing-directives';
 import { NgxUnless } from './directives/ngx-unless';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -34,10 +35,12 @@ import { NgxUnless } from './directives/ngx-unless';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [
-    provideBrowserGlobalErrorListeners()
+    provideBrowserGlobalErrorListeners(),
+    HttpClient
   ],
   bootstrap: [App]
 })
