@@ -1,0 +1,15 @@
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-first',
+  standalone: false,
+  templateUrl: './first.html',
+  styleUrl: './first.css'
+})
+export class First {
+  message: string = 'Hello, World!';
+  
+  public getMessage() : string {
+    return this.message;
+  }
+}
